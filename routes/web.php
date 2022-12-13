@@ -20,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Controller::class, 'index'])->name('index');
 Route::get('/room/{room:slug}', [RoomController::class, 'show'])->name('room');
 
+// Admin page test
+Route::get('/admin', function () {
+    return view('admin');
+});
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 });
