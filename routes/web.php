@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RoomController;
@@ -23,7 +23,7 @@ Route::group(['as' => 'room.'], function () {
     Route::get('/room/{room:slug}', [RoomController::class, 'show'])->name('show');
 
     Route::group(['middleware' => 'auth', 'as' => 'pinjam.'], function () {
-        Route::post('/room/{room:slug}', [PeminjamanController::class, 'create'])->name('create');
+        Route::get('/room/{room:slug}/pinjam', [PeminjamanController::class, 'create'])->name('create');
         Route::post('/room/{room:slug}/pinjam', [PeminjamanController::class, 'store'])->name('store');
     });
 });

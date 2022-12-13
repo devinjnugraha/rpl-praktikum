@@ -9,8 +9,9 @@
         @enderror
     @else
         <input name="{{ $name }}" type="{{ $type }}"
-            class="form-control @error($name) is-invalid @enderror" id="{{ $id }}"
-            placeholder="{{ $label }}" value="{{ old($name) }}" required>
+            class="form-control @error($name) is-invalid @enderror {{ $readonly ? 'bg-light' : '' }}"
+            id="{{ $id }}" placeholder="{{ $label }}" value="{{ $value ?: old($name) }}"
+            {{ $readonly ? 'readonly' : '' }} required>
         @error($name)
             <div class="invalid-feedback">
                 {{ $message }}

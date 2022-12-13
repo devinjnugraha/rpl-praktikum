@@ -11,18 +11,22 @@ class FloatingInput extends Component
     public $name;
     public $type;
     public $label;
+    public $value;
+    public $readonly;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $label, $type = 'text')
+    public function __construct($label, $name = '', $value = '', $type = 'text', $readonly = false)
     {
         $this->id = Str::random(8);
         $this->name = $name;
         $this->type = $type;
         $this->label = $label;
+        $this->value = $value;
+        $this->readonly = $readonly;
     }
 
     /**

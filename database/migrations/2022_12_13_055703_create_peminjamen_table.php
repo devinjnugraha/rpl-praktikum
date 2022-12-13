@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('peminjamen', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->string('proker');
+            $table->string('agenda');
+            $table->string('berkas');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('room_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -23,11 +23,10 @@
                     <div class="card-body">
                         <h4 class="card-title fw-bold">Pilih Jadwal</h4>
                         <hr class="my-4">
-                        <form action="{{ route('register.register') }}" method="POST">
-                            @csrf
+                        <form action="{{ route('room.pinjam.create', $room) }}">
                             <div class="mb-4">
                                 Tanggal:
-                                <input type="date" id="date" name="date">
+                                <input type="date" id="date" name="date" required>
                             </div>
                             <button type="submit" class="btn btn-secondary w-100 rounded-pill">Pinjam Sekarang!</button>
                         </form>
