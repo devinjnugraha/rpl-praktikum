@@ -17,13 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::group(['as' => 'room.'], function () {
     Route::get('/', [RoomController::class, 'index'])->name('index');
     Route::get('/room/{room:slug}', [RoomController::class, 'show'])->name('show');
 
     Route::group(['middleware' => 'auth', 'as' => 'pinjam.'], function () {
         Route::get('/room/{room:slug}/pinjam', [PeminjamanController::class, 'create'])->name('create');
+        Route::post('/room/{room:slug}/pinjam', [PeminjamanController::class, 'store'])->name('store');
+    });
+
+    // Admin page test
+    Route::get('/admin', function () {
+        return view('admin');
+    });
+
+    Route::group(['middleware' => 'auth', 'as' => 'pinjam.'], function () {
+        Route::post('/room/{room:slug}', [PeminjamanController::class, 'create'])->name('create');
         Route::post('/room/{room:slug}/pinjam', [PeminjamanController::class, 'store'])->name('store');
     });
 });
