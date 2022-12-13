@@ -5,7 +5,8 @@
         <div class="row g-5">
             @foreach ($rooms as $room)
                 <div class="col-md-4">
-                    <x-card image="{{ $room->image }}" title="{{ $room->title }}" href="{{ route('room', $room) }}" />
+                    <x-card image="{{ $room->image }}" title="{{ $room->title }}"
+                        href="{{ route('room.show', $room) }}" />
                 </div>
             @endforeach
         </div>
