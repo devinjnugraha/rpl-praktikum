@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
-use App\Http\Requests\StoreRoomRequest;
-use App\Http\Requests\UpdateRoomRequest;
+use App\Models\Peminjaman;
+use App\Http\Requests\StorePeminjamanRequest;
+use App\Http\Requests\UpdatePeminjamanRequest;
 
-class RoomController extends Controller
+class PeminjamanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
-        return view('room.index', [
-            'rooms' => $rooms
-        ]);
+        //
     }
 
     /**
@@ -34,10 +31,10 @@ class RoomController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreRoomRequest  $request
+     * @param  \App\Http\Requests\StorePeminjamanRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRoomRequest $request)
+    public function store(StorePeminjamanRequest $request)
     {
         //
     }
@@ -45,23 +42,21 @@ class RoomController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show(Peminjaman $peminjaman)
     {
-        return view('room.show', [
-            'room' => $room
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit(Peminjaman $peminjaman)
     {
         //
     }
@@ -69,11 +64,11 @@ class RoomController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRoomRequest  $request
-     * @param  \App\Models\Room  $room
+     * @param  \App\Http\Requests\UpdatePeminjamanRequest  $request
+     * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRoomRequest $request, Room $room)
+    public function update(UpdatePeminjamanRequest $request, Peminjaman $peminjaman)
     {
         //
     }
@@ -81,10 +76,10 @@ class RoomController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy(Peminjaman $peminjaman)
     {
         //
     }
